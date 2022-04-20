@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataSet</title>
+    <script type="module" src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        
+    
+        <form id="new-item-form">
+            <input type="text" placeholder="Add new Item" id="item-input">
+            <label for="item-input" class="inputlabel">New Item</label>
+            <button type="submit">Add Item</button>
+        </form>
+
+        <ul id="list">
+
+        </ul>
+    
+        <template id="list-item-template">
+            <li id="list-item">
+                <label class="list-item-label">
+                    <input type="checkbox" data-list-item-checkbox>
+                    <span data-list-item-text></span>
+                </label>
+                <button data-list-item-delete>Delete</button>
+            </li>
+        </template>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="modal" id="modal">
+        <div class="heading">
+            <h3>DANGER ZONA!</h3>
+        </div>
+        <div class="modal-body">
+            <p>OU you can't repair it again 🤐😪</p>
+            <button id="modal-btn">OKAY</button>
+        </div>
+    </div>
+
+    <!-- <hr>
+    <button data-clicks="0">1</button>
+    <button data-clicks="0">2</button>
+    <button data-clicks="0">3</button> -->
+</body>
+
+</html>

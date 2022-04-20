@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-image: linear-gradient(60deg, rgb(0, 100, 139), rgb(14, 161, 93));
+    min-height: 100vh;
+    color: white;
+}
+
+.container {
+    min-width: 80%;
+    max-width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+input, button {
+    width: 100%;
+    outline: none;
+    border-radius: 6px;
+    padding: 9px 3px;
+    border: 1px solid transparent;
+    margin-top: 6px;
+    transition: .3s;
+}
+
+input:hover, button:hover {
+    opacity: .9;
+    border: 1px solid rgb(14, 161, 93);
+}
+
+input:active, button:active {
+    opacity: .8;
+    border: 1px solid rgb(14, 161, 93);
+}
+
+input:focus, button:focus {
+    border: 1px solid rgb(14, 73, 161);
+    box-shadow: 0 0 1rem rgb(14, 161, 93);
+}
+
+input[type="checkbox"] {
+    box-shadow: none;
+    accent-color: crimson;
+    width: auto;
+    align-self: flex-start;
+}
+
+li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    word-break: break-all;
+}
+
+li button, li label {
+    width: auto;
+    color: aliceblue;
+}
+
+li button {
+    background-color: brown;
+    min-width: 50px;
+}
+
+input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    opacity: .6;
+    transition: .3s;
+}
+
+#new-item-form {
+    position: relative;
+    margin-top: 20px;
+}
+
+.inputlabel {
+    position: absolute;
+    transition: .4s;
+    top: 0;
+    transform: translateY(-55%);
+    color: #ccc;
+}
+
+#item-input:placeholder-shown + .inputlabel {
+    opacity: 0;
+    transform: translateY(0%);
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.modal {
+    position: fixed;
+    background: white;
+    color: #333;
+    padding: 1.5rem;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.644);
+    border-radius: 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+    min-width: 270px;
+}
+
+.modal.open, .overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal.open {
+    transform: translate(-50%, -50%);
+}
